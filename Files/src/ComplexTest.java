@@ -2,7 +2,7 @@
 public class ComplexTest {
 
 	public static void main(String[] args) {
-		// Initializing two complex numers.
+		// Initializing two complex numbers.
 		Complex z1 = new Complex(1,2);
 		Complex z2 = new Complex(4,5);
 		
@@ -20,6 +20,9 @@ public class ComplexTest {
 		
 		// Calculates absolute value of Complex number - Expected output is 5.0
 		System.out.println(z3.abs()); 
+		
+		System.out.println(z3.getRe()); // Expected output is 3.0
+		System.out.println(z3.getIm()); // Expected output is 4.0
 	}
 
 }
