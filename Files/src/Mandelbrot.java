@@ -80,21 +80,23 @@ public class Mandelbrot {
 	public static Color[] readFile(File f) throws FileNotFoundException {
 		Scanner scanner = new Scanner(f);
 		List<String> lines = new ArrayList<String>();
-		Color[] color = new Color[MAX];
+		Color[] color = new Color[MAX + 1];
 		
 		while (scanner.hasNextLine()) {
 		    lines.add(scanner.nextLine());
 		}
 		
 		int size = lines.size();
-		if(size != MAX+1) {
+		if(size != MAX + 1) {
 			System.out.println("File doesn't contain " + (MAX + 1) + " lines");
 			return readFile(getFile());
 		}
 		
+
 		try {
 			for (int i = 0; i < size; i++) {
 				Scanner line = new Scanner(lines.get(i));
+				System.out.println(i);
 				color[i] = new Color(line.nextInt(), line.nextInt(), line.nextInt());
 			}
 		} catch (Exception e) {
